@@ -1,0 +1,16 @@
+{
+  "name": "foodpanda-order-history-tool",
+  "version": "0.0.1",
+  "description": "Fetch Foodpanda Order History. Authed is needed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "foodpanda",
+    "order",
+    "history"
+  ],
+  "author": "uWayLu",
+  "license": "MIT"
+}
