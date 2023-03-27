@@ -12,5 +12,13 @@
     "history"
   ],
   "author": "uWayLu",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uWayLu/FoodpandaOrderHistoryTool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uWayLu/FoodpandaOrderHistoryTool/issues"
+  },
+  "homepage": "https://github.com/uWayLu/FoodpandaOrderHistoryTool#readme"
 }
