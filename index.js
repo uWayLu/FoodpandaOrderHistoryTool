@@ -23,6 +23,10 @@ const fees_desc = {
     NEXTGEN_DELIVERY_FEE: '外送服務費',
     NEXTGEN_DRIVER_TIP: '外送夥伴小費',
     NEXTGEN_COUT_VOUCHER: '優惠券',
+    NEXTGEN_CART_DISCOUNT: '折扣',
+    NEXTGEN_TOTAL_VAT: '總計 （含稅）',
+    NEXTGEN_CART_SUBTOTAL: '小計',
+    NEXTGEN_CART_CONTAINER_CHARGES: '外賣包裝費用',
 };
 
 const getRows = function (items) {
@@ -31,15 +35,15 @@ const getRows = function (items) {
             '訂單號': item.order_code,
             '日期': item.ordered_at.date,
             '商家': item.vendor.name,
-            '品項': product.name,
+            '品項': product.name + (product.toppings_attributes ? `\n${product.toppings_attributes.value}` : ''),
             '數量': product.quantity,
             '金額': product.total_price,
         })),
-        ...item.dynamic_fees.filter(fee => ['NEXTGEN_DELIVERY_FEE', 'NEXTGEN_COUT_VOUCHER'].includes(fee.translation_key)).map(fee => ({
+        ...item.dynamic_fees.map(fee => ({
             '訂單號': item.order_code,
             '日期': item.ordered_at.date,
             '商家': '',
-            '品項': fees_desc[fee.translation_key] + (fee.name ? `:${fee.name}` : ''),
+            '品項': (fees_desc[fee.translation_key] ?? fee.translation_key) + (fee.name ? `:${fee.name}` : ''),
             '數量': 1,
             '金額': fee.value,
         })),

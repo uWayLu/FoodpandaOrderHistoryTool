@@ -11,3 +11,5 @@
 + [ ] Order Filter
     + fetch by date
     + by status
++ [ ] Export to Google Sheet Directly
+    - if .env `G_SHEET_URL` is set
